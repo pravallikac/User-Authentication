@@ -1,0 +1,173 @@
+<div class="app flex-row align-items-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-8 col-sm-8 col-md-6 col-lg-5 offset-xs-2 offset-sm-2 offset-md-3 offset-lg-3">
+        <div class="card-group">
+          <div class="card pl-3 pr-3 pt-1 pb-1">
+            <div class="card-body text-center" style="text-align: center;">
+              <form id="form-login"  class="well" ngNativeValidate name ="form" (ngSubmit)= signup()>
+
+              <img src="../../../assets/img/logo.png" class="img-fluid" alt="RDOPS">
+                <p class="text-muted">Create your account</p>
+
+                <div>
+                  <div class="input-group form-group mb-0">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-user"></i></span>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Full Name"
+                      [(ngModel)]="fullname"
+                      name="fullname"
+                      required
+                      #fullname1="ngModel">
+                  </div>
+
+                  <span *ngIf="!fullname1.valid && fullname1.touched"
+                  class="help-block">required Full name</span>
+
+                </div>
+
+                <div>
+                  <div class="input-group form-group mt-3 mb-0">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">@</span>
+                    </div>
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Email"
+                      [(ngModel)]="email"
+                      name="email"
+                      required
+                      #email1="ngModel">
+                  </div>
+                  <span
+                    *ngIf="!email1.valid && email1.touched"
+                    class="help-block">Please enter valid Email-ID!</span>
+                </div>
+
+                <div>
+                  <div class="input-group form-group mt-3 mb-0">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-user"></i></span>
+                    </div>
+                    <select
+                      id="role"
+                      class="form-control"
+                      [(ngModel)]="role"
+                      name="role"
+                      required
+                      #role1="ngModel">
+                      <option value="developer">Developer</option>
+                      <option value="analyst">System Analyst</option>
+                      <option value="admin">Admin</option>
+                    </select>
+                  </div>
+                  <!--<span-->
+                    <!--*ngIf="!username.valid && username.touched"-->
+                    <!--class="help-block">Please enter Username!</span>-->
+                </div>
+
+                <div>
+                  <div class="input-group form-group mt-3 mb-0">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-globe"></i></span>
+                    </div>
+                    <select
+                      id="country"
+                      class="form-control"
+                      [(ngModel)]="country"
+                      name="country"
+                      #country1="ngModel">
+                      <option value="usa">United States</option>
+                      <option value="india">India</option>
+                    </select>
+                  </div>
+                  <!--<span-->
+                    <!--*ngIf="!username.valid && username.touched"-->
+                    <!--class="help-block">Please enter Username!</span>-->
+                </div>
+
+                <div>
+                  <div class="input-group form-group mt-3 mb-0">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-user"></i></span>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Username"
+                      [(ngModel)]="username"
+                      name="username"
+                      required
+                      #username2="ngModel">
+                  </div>
+                  <span
+                    *ngIf="!username2.valid && username2.touched"
+                    class="help-block">Please enter valid Username!</span>
+                </div>
+
+                <div>
+                  <div class="input-group form-group mt-3 mb-0">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-lock"></i></span>
+                    </div>
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Password"
+                      [(ngModel)]="password"
+                      name="password"
+                      required
+                      #password2="ngModel">
+                  </div>
+                  <span
+                    *ngIf="!password2.valid && password2.touched"
+                    class="help-block">Please enter  Password!</span>
+
+                </div>
+
+                <!--<div class="input-group form-group mb-4">-->
+                  <!--<div class="input-group-prepend">-->
+                    <!--<span class="input-group-text"><i class="icon-lock"></i></span>-->
+                  <!--</div>-->
+                  <!--<input type="password" class="form-control" placeholder="Repeat password">-->
+                <!--</div>-->
+
+                <div class="row mt-4 mb-4">
+                  <div class="col-md-12">
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      >Create Account</button>
+                  </div>
+                </div>
+                <div class="row mt-4 mb-4">
+                  <div class="col-md-12">
+                    <button
+                      type="Login"
+                      routerLink="/pages/login"
+                      class="btn btn-primary login"
+                    >Login</button>
+                  </div>
+                </div>
+                <!--<div class="row show-hide-message">-->
+
+                  <!--<div [ngClass]="messageClass">-->
+                    <!--{{message}}-->
+                  <!--</div>-->
+
+                <!--</div>-->
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

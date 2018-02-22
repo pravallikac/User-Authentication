@@ -1,0 +1,83 @@
+<div class="app flex-row align-items-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-8 col-sm-8 col-md-6 col-lg-5 offset-xs-2 offset-sm-2 offset-md-3 offset-lg-3">
+        <div class="card-group">
+          <div class="card p-3">
+            <form id="form-login" class="well" (ngSubmit)="login()" name="form"  style="width: 330px; height: 450px;margin:auto;">
+            <div class="card-body text-center">
+                <img src="../../../assets/img/logo.png" class="img-fluid" alt="RDOPS">
+                <p class="text-muted">Sign In to your account</p>
+                <div>
+                  <div class="input-group form-group mb-0">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-user"></i></span>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Username"
+                      [(ngModel)]="username"
+                      name="username"
+                      required
+                      #username1="ngModel">
+                  </div>
+                  <span
+                    *ngIf=" username1.touched && !username1.valid"
+                    class="help-block">Please enter Username!</span>
+                </div>
+
+                <div>
+                  <div class="input-group form-group mt-3 mb-0">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-lock"></i></span>
+                    </div>
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Password"
+                      [(ngModel)]="password"
+                      name="password"
+                      required
+                      #password1="ngModel">
+                  </div>
+                  <span
+                    *ngIf=" password1.touched && !password1.valid"
+                    class="help-block">Please enter Password!</span>
+                </div>
+
+                <div class="row mt-4 mb-4">
+                  <div class="col-md-12">
+                    <button 
+                           id="submit-tf"
+                           name="submit"
+                           class="btn btn-primary button-sign-in form-control"
+                            >Login</button>
+
+
+                    <!--<button-->
+                      <!--type="submit"-->
+                      <!--class="btn btn-primary"-->
+                      <!--[disabled]="!f.valid">Login</button>-->
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-6">
+                    <button type="button" class="btn btn-link px-0">Forgot password?</button>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-6">
+                    <button
+                      type="button"
+                      routerLink="/pages/register"
+                      class="btn btn-link px-0">Create an account</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
